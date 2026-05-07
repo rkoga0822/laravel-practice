@@ -1,0 +1,46 @@
+h2{
+    
+}
+main{
+    width: 70%;
+    margin: 0 auto;
+}
+.logout-btn{
+    display: flex;
+}
+.todo-title{
+    color: red;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.todo-card{
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.todo-card-title{
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.todo-card-body{
+    font-size: 16px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.todo-card-date{
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+}

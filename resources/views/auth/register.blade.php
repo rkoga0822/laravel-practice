@@ -33,4 +33,5 @@
     </div>
 
     <button type="submit">新規登録</button>
+    <a href="{{route('login')}}">ログイン画面に戻る</a>
 </form>
