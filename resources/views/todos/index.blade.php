@@ -17,7 +17,12 @@
             <p class="todo-card-date">
                 作成日：{{ $todo->created_at->format('Y-m-d') }}
             </p>
-            <a href="{{route('todos.edit',$todo)}}">編集</a>
+            <a href="{{route('todos.edit',$todo)}}" class="btn">編集</a>
+            <form action="{{route('todos.destroy',$todo)}}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit".  onclick="return confirm('本当に削除しますか？')" class="btn">削除</button>
+            </form>
         </div>
     @endforeach
 </div>       

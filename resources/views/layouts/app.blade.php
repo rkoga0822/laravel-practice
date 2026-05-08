@@ -13,11 +13,11 @@
 
         <nav>
             
-            <a href="{{ route('todos.index') }}">一覧</a>
-            <a href="{{ route('todos.create') }}">作成</a>
+            <a href="{{ route('todos.index') }}" class="btn">一覧</a>
+            <a href="{{ route('todos.create') }}" class="btn">作成</a>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="logout-btn">ログアウト</button>
+                    <button type="submit" class="btn">ログアウト</button>
                 </form>
         </nav>
     </header>
