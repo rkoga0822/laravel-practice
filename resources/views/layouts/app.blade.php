@@ -19,6 +19,7 @@
                     @csrf
                     <button type="submit" class="btn">ログアウト</button>
                 </form>
+            <div class="username"><a href="{{route('profile.index')}}">{{auth()->user()->name}}</a>さん</div>
         </nav>
     </header>
 
