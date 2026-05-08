@@ -51,8 +51,11 @@ main{
   border-color: lightblue;
 }
 .username{
-    text-align: right;
+    /* text-align: right; */
     font-size: large;
+}
+.profile{
+    /* text-align: right; */
 }
 .profile-icon{
     width: 80px;

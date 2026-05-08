@@ -44,19 +44,27 @@ class TodoController extends Controller
     //todo編集ページ遷移
     public function edit(Todo $todo): View
     {
+        if ($todo->user_id !== Auth::id()) {
+            abort(403);
+        }
+
         return view('todos.edit', compact('todo'));
     }
     //更新処理
-    public function update(Request $request, Todo $todo):RedirectResponse
+    public function update(Request $request, Todo $todo): RedirectResponse
     {
+        if ($todo->user_id !== Auth::id()) {
+            abort(403);
+        }
+
         $request->validate([
-            'title'=>['required'],
-            'body'=>['nullable'],
+            'title' => ['required'],
+            'body' => ['nullable'],
         ]);
 
         $todo->update([
-            'title'=>$request->title,
-            'body'=>$request->body,
+            'title' => $request->title,
+            'body' => $request->body,
         ]);
 
         return redirect()->route('todos.index');
@@ -64,6 +72,10 @@ class TodoController extends Controller
 
     public function destroy(Todo $todo)
     {
+        if ($todo->user_id !== Auth::id()) {
+            abort(403);
+        }
+        
         $todo->delete();
         return redirect()->route('todos.index');
     }

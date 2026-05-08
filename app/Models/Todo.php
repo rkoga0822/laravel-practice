@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Todo extends Model
@@ -13,8 +14,8 @@ class Todo extends Model
         'body',
     ];
 
-    public function todos(): HasMany
+    public function user(): BelongsTo
     {
-        return $this->hasMany(Todo::class);
+        return $this->belongsTo(User::class);
     }
 }

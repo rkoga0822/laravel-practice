@@ -23,5 +23,5 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::resource('todos', TodoController::class)->except(['show']);
     //プロフィール画面遷移
-    Route::resource('profile', UserController::class)->except(['show']);
+    Route::resource('profile', UserController::class)->except(['show','create','store']);
 });

@@ -36,12 +36,13 @@ class AuthController extends Controller
         return redirect('/login');
     }
 
-    //ログイン処理
+    //ログイン画面に遷移
     public function showLogin(): View
     {
         return view('auth.login');
     }
 
+    //ログイン処理
     public function login(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
