@@ -1,16 +1,24 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>Todo一覧</title>
-</head>
-<body>
-    <h1>Todo一覧</h1>
+@extends('layouts.app')
+@section('title','Todo一覧')
+@section('content')
+    <h2>Todo一覧</h2>
 
-    <ul>
-        @foreach ($todos as $todo)
-            <li>{{ $todo->title }}</li>
-        @endforeach
-    </ul>
-</body>
-</html>
+<div class="todo-list">
+    @foreach ($todos as $todo)
+        <div class="todo-card">
+            <h3 class="todo-card-title">
+                {{ $todo->title }}
+            </h3>
+
+            <p class="todo-card-body">
+                {{ $todo->body }}
+            </p>
+
+            <p class="todo-card-date">
+                作成日：{{ $todo->created_at->format('Y-m-d') }}
+            </p>
+        </div>
+    @endforeach
+</div>       
+    
+@endsection

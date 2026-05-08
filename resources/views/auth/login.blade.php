@@ -22,4 +22,5 @@
         </div>
 
         <button type="submit">ログイン</button>
+        <a href="{{route('register')}}">新規登録</a>
     </form>

@@ -16,10 +16,16 @@ Route::get('/login',[AuthController::class,'showLogin'])->name('login');
 Route::post('/login',[AuthController::class,'login'])->name('login.store');
 
 //ログアウト
-Route::post('/logout',[AuthController::class],'logout')->name('logout');
+Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
-    Route::resource('todos', TodoController::class);
+    Route::resource('todos', TodoController::class)->except(['index' ]);
 });
 
-Route::get('/index',[TodoController::class,'index'])->name('index');
+//トップ画面
+Route::get('/todos',[TodoController::class,'index'])->name('todos.index');
+
+//todo新規作成
+Route::get('/todos/create',[TodoController::class,'create'])->name('todos.create');
+Route::post('/todos',[TodoController::class,'store'])->name('todos.store');
+
