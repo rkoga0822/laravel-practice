@@ -17,6 +17,7 @@
             <p class="todo-card-date">
                 作成日：{{ $todo->created_at->format('Y-m-d') }}
             </p>
+            <a href="{{route('todos.edit',$todo)}}">編集</a>
         </div>
     @endforeach
 </div>       

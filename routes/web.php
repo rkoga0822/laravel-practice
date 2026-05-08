@@ -18,14 +18,8 @@ Route::post('/login',[AuthController::class,'login'])->name('login.store');
 //ログアウト
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
+//resourceはすべてのcrudのルーティングを持っている
 Route::middleware('auth')->group(function () {
-    Route::resource('todos', TodoController::class)->except(['index' ]);
+    Route::resource('todos', TodoController::class)->except(['show']);
 });
-
-//トップ画面
-Route::get('/todos',[TodoController::class,'index'])->name('todos.index');
-
-//todo新規作成
-Route::get('/todos/create',[TodoController::class,'create'])->name('todos.create');
-Route::post('/todos',[TodoController::class,'store'])->name('todos.store');
 
