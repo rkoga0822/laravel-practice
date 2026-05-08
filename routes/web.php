@@ -19,7 +19,7 @@ Route::post('/login',[AuthController::class,'login'])->name('login.store');
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
-    Route::resource('todos', TodoController::class);
+    Route::resource('todos', TodoController::class)->except(['index' ]);
 });
 
 //トップ画面
